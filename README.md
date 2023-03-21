@@ -1,4 +1,4 @@
-# cpsc-406-algorithm
+# CPSC 406: Algorithm Analysis
  
 Tyler L.
 tylewis@chapman.edu
