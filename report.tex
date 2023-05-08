@@ -145,6 +145,59 @@ The property that is violated produces an execution sequence where the specified
 \includegraphics[width=10cm]{hw9.png}
 The attack was successful because the intruder was able to intercept the messages exchanged between Alice and Bob and alter them in such a way that Bob believed she was communicating with Alice when in fact he was communicating with the intruder. Specifically, the intruder was able to send messages to Bob and sign them with Alice's key, thereby convincing Bob that he was receiving messages from Alice when in fact they were coming from the intruder.
 
+\subsection{HW 11}
+
+\[A_1|A_2\]
+\[A_1;A_2\]
+\[A*\]
+
+\subsection{HW 12}
+
+\href{https://hackmd.io/@alexhkurz/ryEdSuVXh}{HackMD Page}\\
+\begin{itemize}
+    \item[Exercise 1:] \textit{Have a look at peterson.py. What program behavior do you expect? Is your expectation confirmed when you run the program?}
+    
+    peterson.py uses a busy waiting lock, my expectation that this is adequate to ensure a result of 20,000 is confirmed by running the program
+
+    \item[Exercise 2:] \textit{Analyse the Java program peterson in the same way as you analysed the Python program in the previous exercise. Make sure to run the Java program on your local machine. What observations do you make?}
+
+    peterson in Java follows the same busy waiting lock scheme as in the python code.
+
+    \item[Exercise 3:] \textit{Explain why the outcome
+    a = 0, b = 0
+    is not sequentially consistent, but the other three outcomes are.}
+    
+    The way the program is written, this outcome would only arise if one of the threads failed or the order of operations was modified within the threads. Assuming the threads execute synchronously, and memory is properly shared between threads, then x and/or y will always be set to 1 before the assignment of a and/or b. 
+
+    \item[Exercise 4:] \textit{Report the results you get from running memoryModelWithStats on your local machine. Include the specs of our processor, in particular the number of cores. If you can find out something about the cashes, add this as well.}
+\begin{verbatim}
+    Outcomes after 1000 iterations:
+    (0, 0): 4
+    (0, 1): 487
+    (1, 0): 509https://www.overleaf.com/project/63f2ff20adaf2530bdc3f4fa
+    (1, 1): 0
+\end{verbatim}
+
+\begin{verbatim}
+    Hardware Overview:
+
+      Model Name: MacBook Pro
+      Chip: Apple M2 Pro
+      Total Number of Cores: 12 (8 performance and 4 efficiency)
+      Memory: 32 GB
+\end{verbatim}
+    
+
+    \item[Exercise 5:] \textit{You can force sequential consistency of memoryModelWithStats by declaring certain variables volatile. In general, declaring variables as volatile comes at cost in execution time, so we want to use this sparingly. Which variables must be declare as volatile to ensure sequential consistency? Measure and report the effect that volatile has on your run time (I use java Main | gnomon).}
+
+    Declaring variables (x, y, a, and b) as volatile will achieve sequential consistency. 
+
+    I was unable to get gnomon running but chatGPT indicates this may come at a cost in execution time, as accesses to volatile variables may be slower than non-volatile variables.
+
+
+
+\end{itemize}
+
 \section{Conclusions}\label{conclusions}
 
 In this document, to help you getting started, I gave a first succinct example of typesetting in Latex.
