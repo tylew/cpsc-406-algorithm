@@ -5,6 +5,9 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{fullpage}
+\usepackage{geometry}
+\geometry{margin=1.3in}
+
 
 \usepackage{graphicx}
 
@@ -62,10 +65,6 @@
 
 \maketitle
 
-\begin{abstract}
-A very short introduction to typesetting in LaTeX for my courses ``Programming Languages'', ``Compiler Construction'' and ``Algorithm Analysis''.
-\end{abstract}
-
 \tableofcontents
 
 \section{Homework}\label{intro}
@@ -85,7 +84,7 @@ A very short introduction to typesetting in LaTeX for my courses ``Programming L
 \end{center}
 \end{minipage}
 
-\subsection{HW 2}
+\subsection{HW 3}
 
 {\bf Question 1:}
 
@@ -95,21 +94,22 @@ A very short introduction to typesetting in LaTeX for my courses ``Programming L
 % \end{minipage}
 
 {\bf Question 2:}
-\texttt{
-?- twoway(W,a)
-
-?- conn(W,a), conn(a,W)
-
-?- addr(W,a), addr(a,Z), serv(Z), addr(Z,W)
-}
+\begin{verbatim}
+    ?- twoway(W,a)
+    
+    ?- conn(W,a), conn(a,W)
+    
+    ?- addr(W,a), addr(a,Z), serv(Z), addr(Z,W)
+\end{verbatim}
 
 \subsection{HW 6}
+\href{https://hackmd.io/@alexhkurz/ByaOUajy2}{HackMD Page}
 
     \includegraphics[width=9cm]{hw6.jpg}
 
 \subsection{HW 9}
 
-\href{https://github.com/alexhkurz/algorithm-analysis-2023/blob/main/resources/model-checking/Needham-Schroeder.md}{HackMD Page}
+\href{https://github.com/alexhkurz/algorithm-analysis-2023/blob/main/resources/model-checking/Needham-Schroeder.md}{Assignment Brief}
 \\
 
 {\bf Exercise 1:}
@@ -146,10 +146,18 @@ The property that is violated produces an execution sequence where the specified
 The attack was successful because the intruder was able to intercept the messages exchanged between Alice and Bob and alter them in such a way that Bob believed she was communicating with Alice when in fact he was communicating with the intruder. Specifically, the intruder was able to send messages to Bob and sign them with Alice's key, thereby convincing Bob that he was receiving messages from Alice when in fact they were coming from the intruder.
 
 \subsection{HW 11}
+\subsubsection{L11.1}
+\includegraphics[width=10cm]{hw11-2.jpeg}
 
-\[A_1|A_2\]
-\[A_1;A_2\]
-\[A*\]
+\subsubsection{L11.2}
+
+a) The set of strings over alphabet {0, 1,...,9}  such that the final digit has appeared before.
+\\\\
+The regular expression which I think may satisfy this (simplified) is as follows, with S being any of the set of characters in our alphabet, and N being a specific character
+\[S*NS*N\]
+b) The set of strings consisting of zero or more a's followed by zero or more b's, followed by zero or more c's.
+\[A*B*C*\]
+\includegraphics[width = 10cm]{hw11-1.png}
 
 \subsection{HW 12}
 
@@ -198,9 +206,110 @@ The attack was successful because the intruder was able to intercept the message
 
 \end{itemize}
 
-\section{Conclusions}\label{conclusions}
+\section{Creative Paper}
+\subsection{Introduction}
 
-In this document, to help you getting started, I gave a first succinct example of typesetting in Latex.
+\textbf{THE YEAR IS 2048.}
+
+The world finds itself under the control of a single global regime, which, citing national security and unity, has imposed harsh restrictions on the World Wide Web, forever altering the digital communication landscape. Privacy has become a relic of the past. \textbf{This oppressive regime is embodied in AI-Titan, a government-affiliated entity formed by the consolidation of tech giants and absorbed into the government due to increased regulations and the addition of AI to every aspect of their function.}
+
+AI-Titan now owns all data centers and acts as the authority responsible for issuing \textbf{identity encryption keys necessary for internet access.} Without these keys, the internet becomes inaccessible, leaving users disconnected from the digital realm. The regime has banned the use of third-party encryption, requiring individuals to encrypt their data with their personal private key or transmit it in plaintext, allowing the regime to monitor and control information at will.
+
+The regime's influence extends to cloud computing, where AI-Titan has become the sole provider of cloud services. With control over DNS and Certificate Authority (CA) systems, AI-Titan establishes a complete monopoly over the public internet. Every website and data flow falls under their jurisdiction, solidifying the regime's grip on information and further eroding privacy.
+
+Under the regime's control, the Domain Name System (DNS), once a neutral phonebook of the internet, is a tool of surveillance and censorship. DNS servers, now under the regime's command, remove websites deemed undesirable from their records, effectively erasing them from the digital world. All communication infrastructure is owned by the regime \textbf{and is monitored closely by AI-Titan.}
+
+\subsection{A Glimmer of Hope}
+
+\textbf{A glimmer of hope emerges amidst the digital darkness.} A movement, known as the Digital Liberation Front (DiLF), emerges with the aim of restoring privacy, freedom, and autonomy in the digital realm.
+
+Recognizing the regime's inability to control satellite networks orbiting Earth, the DiLF proposes a daring solution: a new distributed satellite internet that bypasses the regime's infrastructure.
+
+Their ambitious plan involves re-purposing the existing satellite network, which was put there during the space race bubble in the 20s and 30s. The DiLF establishes SatNet: a massive distributed system running on tens of thousands of satellites. The network uses advanced consensus algorithms and an AI governance model to create a decentralized, peer-to-peer network accessible through low-power ground terminal stations. This not only undermines the harsh internet surveillance of the regime but marks a revolution of the World Wide Web.
+
+\subsection{The Creation of SatNet}
+
+SatNet becomes a platform where information flows freely, shielded by anonymity and distribution. Communications remain encrypted and untraceable. However, the DiLF recognizes that to maintain trust and security, SatNet requires a robust AI governance model that operates autonomously, ensuring a reliable and resilient flow of information without the need for human intervention, which has proven problematic in every failure of the human race.
+
+To achieve this, SatNet incorporates an innovative AI governance system called Autonomous Consensus Control (ACC). ACC is a self-learning, self-improving AI system designed to manage SatNet's operations, consensus protocols, and identity system.
+
+At the core of SatNet's ACC is the Identity Enhancement Protocol (IEP). The IEP allows individuals to participate in the consensus process and contribute to the network's improvement over time. Users are assigned unique digital identities that are securely stored within SatNet's distributed ledger. These identities serve as the foundation for trust and governance within the network.
+
+The IEP utilizes advanced cryptographic techniques, such as zero-knowledge proofs an encryption, to protect the privacy and integrity of user identities. Users can securely authenticate their identities and participate in consensus without revealing sensitive personal information. This ensures that individuals can engage in the governance process without fear of surveillance or manipulation by external entities.
+
+Within SatNet's AI governance model, the consensus process is facilitated by a sophisticated AI algorithm called Decentralized Consensus Coordinator (DCC). The DCC is responsible for coordinating the consensus among validating nodes, ensuring that the majority of nodes agree on the order and validity of transactions and information within the network.
+
+The DCC employs a hybrid consensus mechanism that combines proof-of-stake (PoS) and proof-of-reputation (PoR) algorithms. Validating nodes, including both trusted satellites and participating ground stations, stake their resources and reputation to earn the right to validate and propose new blocks of transactions. This consensus mechanism ensures that the network remains secure, efficient, and resistant to attacks, while also preventing concentration of power in a single entity.
+
+To continuously improve the network's performance and resilience, SatNet incorporates a feedback loop mechanism called Adaptive Network Optimization (ANO). ANO leverages machine learning algorithms to analyze network performance metrics, identify bottlenecks or vulnerabilities, and dynamically optimize the routing and resource allocation within SatNet. This self-optimizing capability allows the network to adapt and evolve over time, enhancing its efficiency and resistance to potential threats.
+
+In addition to the AI governance model, SatNet embraces transparency and inclusivity through its Decentralized Governance Forum (DGF). The DGF serves as an open platform where stakeholders, including users, developers, and satellite operators, can propose and discuss improvements, changes, and policies related to SatNet's operation. Through a decentralized voting mechanism, decisions regarding network upgrades, protocol changes, and governance rules are collectively determined by the community, ensuring a fair and democratic approach to network governance.
+
+As SatNet matures, its AI governance model not only ensures the network's integrity and security but also facilitates continuous innovation and improvement. With the participation of individuals from diverse backgrounds, SatNet becomes a collaborative ecosystem where ideas thrive and the network's capabilities expand.
+
+\subsection{A New Era of Digital Freedom}
+
+With the deployment of SatNet and its advanced AI governance model, the DiLF movement gains significant traction worldwide. People from all walks of life join the cause, driven by the desire for privacy, freedom, and autonomy in the digital realm.
+
+SatNet's distributed satellite internet gradually outshines the regime-controlled internet, attracting a growing user base seeking an alternative to the oppressive surveillance regime. The network becomes a powerful symbol of resistance, resilience, and human ingenuity.
+
+As more individuals join SatNet, the network's decentralized nature and AI governance model allow it to scale and adapt effortlessly. SatNet becomes a catalyst for positive change, empowering individuals to reclaim control over their digital lives. People communicate freely, share knowledge, and collaborate across borders, fostering innovation, cultural exchange, and social progress.
+
+Governments, witnessing the transformative impact of SatNet and the demands of their own citizens, begin to reassess their approach to digital governance. Inspired by the success of the DiLF movement, they gradually dismantle the regimes own surveillance apparatus, embracing principles of decentralization, privacy, and individual rights.
+
+In this new era of digital freedom, SatNet continues to evolve and improve. The network becomes a global cooperative effort, with nations and organizations collaborating to expand its coverage, enhance its capabilities, and ensure its long-term sustainability.
+
+The story of SatNet and its AI governance model stands as a testament to the indomitable spirit of humanity and its quest for freedom. It reminds us that even in the face of oppressive regimes and technological challenges, innovation, resilience, and collective action can pave the way for a brighter and more inclusive digital future.
+
+\subsection{Technical Analysis}
+
+SatNet, as envisioned in the year 2048, represents a distributed satellite internet system developed by the Digital Liberation Front (DiLF) to counter the oppressive regime's control over the global internet infrastructure. This technical analysis explores the key components and technologies that underpin SatNet and its advanced AI governance model, which empower individuals with privacy, freedom, and autonomy in the digital realm.
+
+\begin{itemize}
+\item Network Architecture:
+\begin{itemize}
+\item SatNet's network architecture utilizes repurposed satellites from the existing satellite network, forming a distributed system accessible through low-power ground terminal stations.
+\item Autonomous Consensus Control (ACC) manages SatNet's operations, consensus protocols, and identity system, ensuring trust, security, and autonomy within the network. ACC incorporates artificial intelligence techniques, such as machine learning, reinforcement learning, and distributed decision-making algorithms.
+\item The Identity Enhancement Protocol (IEP) enables individuals to participate in the consensus process and contribute to network improvement. Users are assigned unique digital identities stored within SatNet's distributed ledger, with advanced cryptographic techniques protecting privacy and integrity.
+\item The Decentralized Consensus Coordinator (DCC) facilitates consensus among validating nodes using a hybrid proof-of-stake (PoS) and proof-of-reputation (PoR) algorithm.
+\item Adaptive Network Optimization (ANO) uses machine learning algorithms to analyze network performance, optimize routing and resource allocation, and enhance the network's efficiency and resilience.
+\item The Decentralized Governance Forum (DGF) provides an open platform for stakeholders to propose and discuss improvements, with decisions made through decentralized voting.
+\end{itemize}
+
+\item Proof-of-Stake (PoS) and Proof-of-Reputation (PoR) Algorithms:
+\begin{itemize}
+\item PoS and PoR are consensus algorithms used in some blockchain networks today. PoS allows validators to secure the network and create new blocks based on the number of coins they hold and stake. PoR is a reputation-based algorithm where validators' past behavior and reputation influence their role in the consensus process.
+\end{itemize}
+
+\item Zero-Knowledge Proofs:
+\begin{itemize}
+\item Zero-knowledge proofs are cryptographic protocols that allow a party to prove the validity of a statement without revealing any additional information. SatNet utilizes zero-knowledge proofs to protect privacy and integrity within its identity system.
+\end{itemize}
+
+\item Advanced Cryptographic Encryption:
+\begin{itemize}
+\item SatNet employs advanced cryptographic encryption techniques, including asymmetric (public-key) encryption, symmetric encryption, and hashing algorithms, ensuring the privacy and security of user identities and communications within the network.
+\end{itemize}
+
+\item Machine Learning Algorithms for Adaptive Network Optimization (ANO):
+\begin{itemize}
+\item ANO in SatNet utilizes machine learning algorithms to analyze network performance metrics, identify bottlenecks or vulnerabilities, and optimize routing and resource allocation, enhancing the network's efficiency and resilience.
+\end{itemize}
+
+\item Autonomous Consensus Control (ACC):
+\begin{itemize}
+\item ACC is an AI governance system designed to manage SatNet's operations, consensus protocols, and identity system. It ensures the network's autonomy, security, and reliability without detailed specifications of its exact implementation.
+\end{itemize}
+\end{itemize}
+
+\subsection{Conclusion}
+
+The collapse of the traditional internet led to a new internet emerging from the grassroots, powered by a wide range of algorithms. This new internet has the potential to replace the old internet and brings about significant societal changes. The regimes infiltration of the internet disrupted communication channels and challenged the power dynamics with the people. However, the DiLFs and their efforts to give rise to a new internet empowered individuals and communities, providing greater control and autonomy over digital experiences like nobody had ever seen before on such a large scale.
+
+The impact of the new internet on society is profound. Individuals now connect their devices through networks that prioritize decentralized and peer-to-peer connections. This shift allows for greater inclusivity, collaboration, and shared interests among communities. The new internet challenged the centralized control of the regime and won. SatNet provided an avenue of enhanced privacy and security through encryption and data protection algorithms, with an impenetrable satellite-enabled physical layer.
+
+Societal developments and advancements in algorithms are closely intertwined. In this fictional story, societal demands for autonomy, privacy, and control drove the development of algorithms that prioritize user empowerment and decentralized networks. Societal demands will shape the future digital landscape, and hopefully one that is more participatory, resilient, and in line with individual needs than the needs and desires of those in control.
+
 
 \begin{thebibliography}{99}
 \bibitem[ALG]{Alg} \href{https://github.com/alexhkurz/algorithm-analysis-2023}{Algorithm Analysis}, Chapman University, 2023.
